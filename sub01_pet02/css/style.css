@@ -1,0 +1,307 @@
+@charset "UTF-8";
+@import url("reset.css");
+@import url("common.css");
+@import url("common.scss");
+/* --main_visual -- */
+#wrap {
+  max-width: var(--max-width);
+  width: var(--responsive-width);
+  margin: 0 auto;
+}
+
+.inner {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+
+.main_visual {
+  background-color: var(--color-point);
+}
+.main_visual .inner {
+  padding-top: 20px;
+}
+.main_visual .inner .myhospital {
+  height: 33px;
+  display: flex;
+  justify-content: space-between;
+}
+.main_visual .inner .myhospital .txtbox {
+  height: 100%;
+  display: flex;
+  line-height: 33px;
+}
+.main_visual .inner .myhospital .txtbox h4 {
+  width: 94px;
+  background-color: var(--color-point-light);
+  text-align: center;
+  border-radius: 20px 0 0 20px;
+}
+.main_visual .inner .myhospital .txtbox select {
+  width: 234px;
+  border-radius: 0 20px 20px 0;
+  padding: 0 15px;
+  border: none;
+}
+
+.profile {
+  margin: 33px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile .profileimg {
+  width: 50px;
+  height: 50px;
+}
+.profile .profileimg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile .txtbox {
+  color: white;
+  font-size: 1.2rem;
+  width: 197px;
+}
+.profile .txtbox h2 {
+  margin-bottom: 5px;
+}
+.profile .txtbox div {
+  height: 20px;
+  display: flex;
+  gap: 10px;
+  line-height: 20px;
+}
+.profile .txtbox div ul {
+  display: flex;
+  gap: 5px;
+}
+.profile .txtbox div ul li {
+  background-color: #2B54A5;
+  padding: 0 8px;
+  border-radius: 10px;
+}
+.profile .main_btn h2 {
+  height: 25px;
+  width: 63px;
+  background-color: #2B54A5;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+}
+.profile .main_btn h2:first-child {
+  margin-bottom: 5px;
+}
+
+.submenu ul {
+  background-color: var(--color-point-light);
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.mypet {
+  margin: 15px 0;
+}
+.mypet h4 {
+  margin-bottom: 15px;
+}
+.mypet .pet {
+  display: flex;
+  gap: 12px;
+}
+.mypet .pet .sed {
+  border: 2px solid var(--color-point);
+  padding: 3px;
+  border-radius: 50%;
+}
+.mypet .pet figure {
+  width: 80px;
+  height: 80px;
+}
+.mypet .pet figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mypet .pet .plus {
+  background-color: #D9D9D9;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.schedule h4 {
+  margin-bottom: 15px;
+}
+.schedule .datepicker {
+  width: 100%;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+}
+.schedule .datepicker .datepicker-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  position: relative;
+  color: var(--color-point-text);
+}
+.schedule .datepicker .datepicker-top::after {
+  content: "";
+  width: 320px;
+  height: 1px;
+  background-color: #b4b4b4;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.schedule .datepicker .datepicker-top ul li {
+  font-size: 1.2rem;
+  margin-bottom: 7px;
+  position: relative;
+}
+.schedule .datepicker .datepicker-top ul li:first-child::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: url(../img/icon/진료날.png) center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: -15px;
+}
+.schedule .datepicker .datepicker-top ul li:nth-child(2)::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: url(../img/icon/접종날.png) center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: -15px;
+}
+.schedule .datepicker .datepicker-top ul li:last-child::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: url(../img/icon/검진날.png) center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: -15px;
+}
+.schedule .datepicker .datepicker-top .month-selector {
+  display: flex;
+  justify-content: space-between;
+  width: 240px;
+  align-items: center;
+  position: relative;
+}
+.schedule .datepicker .datepicker-top .month-selector .material-icons {
+  position: absolute;
+  left: -999999px;
+}
+.schedule .datepicker .datepicker-top .month-selector span {
+  font-size: 1.4rem;
+}
+.schedule .datepicker .datepicker-top .month-selector .arrow-left::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url(../img/icon/left.png) center/cover no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.schedule .datepicker .datepicker-top .month-selector .arrow-right::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url(../img/icon/right.png) center/cover no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+.schedule .datepicker .datepicker-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-row-gap: 2rem;
+}
+.schedule .datepicker .datepicker-calendar .day {
+  justify-self: center;
+  color: #7E818C;
+}
+.schedule .datepicker .datepicker-calendar .date {
+  justify-self: center;
+  color: var(--color-point-text);
+  font-size: 1.4rem;
+}
+.schedule .datepicker .datepicker-calendar .faded {
+  color: #aaaebd;
+}
+.schedule .datepicker .datepicker-calendar .medical-day {
+  background-color: #B8FFBF;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.schedule .datepicker .datepicker-calendar .vaccination-day {
+  background-color: #FFB8F8;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+}
+
+.talktalk {
+  margin: 15px 0;
+}
+.talktalk .cont {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shelter {
+  overflow-x: auto;
+}
+.shelter p {
+  font-size: 1.2rem;
+}
+.shelter .cont {
+  margin: 15px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.shelter .cont figure {
+  margin-bottom: 5px;
+}
+.shelter .cont span {
+  display: block;
+  text-align: center;
+  line-height: 13px;
+  font-weight: 600;
+}
+
+.banner {
+  max-width: var(--max-width);
+  width: 100%;
+}
+.banner figure {
+  height: 130px;
+  margin: 10px 0 80px;
+}
+.banner figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woorien</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.scss">
+
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="wrap" id="wrap">
+        <div class="reservation">
+            <div class="cont">
+                <h4>진료 예약</h4>
+                <div class="input">
+                    <select name="site" class="select" id="" onchange="window.open(value, '_self')" required>
+                        <option value="" disabled selected>예약 가능한 펫</option>
+                        <option value="">더블유 동물의료센터</option>
+                        <option value="">행복동물병원</option>
+                    </select>
+                    <div class="calendar">
+                        <h3>예약 날짜</h3>
+                        <a href="#"><img src="img/icon/Calendar.png" alt="calendaricon"></a>
+                    </div>
+                    <select name="site" class="select" id="" onchange="window.open(value, '_self')" required>
+                        <option value="" disabled selected>진료 종류</option>
+                        <option value="">일반</option>
+                        <option value="">예방접종</option>
+                        <option value="">건강검진</option>
+                        <option value="">스케일링</option>
+                        <option value="">정기검진</option>
+                    </select>
+                    <div class="box">
+                        <input type="text" class="comment" id="comment" placeholder="증상 및 병원에 남길 말">
+                    </div><!-- .box end -->
+                    <div class="text">
+                        <figure>
+                            <img src="img/icon/Information-circle.png" alt="infoicon">
+                        </figure>
+                        <h1>예약 확정 후 문자메세지 발신 됩니다.<br/>
+                        확정 문자를 받기 전까지는 예약 보류 상태입니다.</h1>
+                    </div><!-- .text end -->
+                    <div class="btn">
+                        <a href="#">예약</a>
+                    </div><!-- .btn end -->
+                </div><!-- .input end -->
+            </div><!-- .cont end -->
+        </div><!-- .reservation end -->
+        
+        <div class="main_visual">
+            <div class="inner">
+                <div class="myhospital">
+                    <div class="txtbox">
+                        <h4>내 병원</h4>
+                        <select name="site" id="" onchange="window.open(value, '_self')">
+                            <option value="./index.html">더블유 동물의료센터</option>
+                            <option value="./sub01_pet02/pet02.html">행복동물병원</option>
+                        </select>
+                    </div><!-- .txtbox end -->
+                    <figure class="alam">
+                        <a href="#"><img src="img/icon/Bell.png" alt="종icon"></a>
+                    </figure><!-- .alam end -->
+                </div><!-- .myhospital end -->
+
+                <div class="profile">
+                    <figure class="profileimg">
+                        <img src="img/프로필.png" alt="강아지프로필">
+                    </figure><!-- .profileimg end -->
+                    <div class="txtbox">
+                        <h2>오늘 진료시간 10:00 ~ 18:00</h2>
+                        <div>
+                            <p>병원뱃지:</p>
+                            <ul>
+                                <li>친절</li>
+                                <li>정가제</li>
+                                <li>진료중</li>
+                            </ul>
+                        </div>
+                    </div><!-- .txtbox end -->
+                    <div class="main_btn">
+                        <h2 class="reservation_btn"><a href="#">진료예약</a></h2>
+                        <h2><a href="#">병원정보</a></h2>
+                    </div><!-- .mein_btn end -->
+                </div><!-- .profile end -->
+
+                <div class="submenu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="img/icon/전화걸기.png" alt="전화걸기">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icon/qr-code-scan.png" alt="qrcode">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icon/방문내역.png" alt="방문내역">
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- .submenu end -->
+            </div><!-- .inner end -->
+        </div><!-- .main_visual end -->
+
+        <div class="mypet">
+            <div class="inner">
+                <h4>마이 펫</h4>
+                <div class="pet">
+                    <figure class="first">
+                        <a href="./index.html">
+                            <img src="img/펫선택01.png" alt="강아지사진">
+                        </a>
+                    </figure>
+                    <figure class="sed">
+                        <a href="./sub01_pet02/pet02.html">
+                            <img src="img/펫선택02.png" alt="강아지사진">
+                        </a>
+                    </figure>
+                    <figure class="plus">
+                        <a href="#">
+                            <img src="img/icon/Pluse.png" alt="plusicon">
+                        </a>
+                    </figure>
+                </div><!-- .pet end -->
+            </div><!-- .inner end -->
+        </div><!-- .mypet end -->
+
+        <div class="schedule">
+            <div class="inner">
+                <h4>일정</h4>
+                <div class="datepicker">
+                    <div class="datepicker-top">
+                        <div class="month-selector">
+                            <button class="arrow-left"><i class="material-icons">left</i></button>
+                            <span class="month-name">January 2024</span>
+                            <button class="arrow-right"><i class="material-icons">right</i></button>
+                        </div>
+                        <ul>
+                            <li>진료날</li>
+                            <li>접종날</li>
+                            <li>검진날</li>
+                        </ul>
+                    </div>
+                    <div class="datepicker-calendar">
+                        <span class="day">MON</span>
+                        <span class="day">TUE</span>
+                        <span class="day">WED</span>
+                        <span class="day">THU</span>
+                        <span class="day">FRI</span>
+                        <span class="day">SAT</span>
+                        <span class="day">SUN</span>
+                        <button class="date">1</button>
+                        <button class="date">2</button>
+                        <button class="date medical-day">3</button>
+                        <button class="date">4</button>
+                        <button class="date">5</button>
+                        <button class="date">6</button>
+                        <button class="date">7</button>
+                        <button class="date">8</button>
+                        <button class="date">9</button>
+                        <button class="date">10</button>
+                        <button class="date">11</button>
+                        <button class="date">12</button>
+                        <button class="date">13</button>
+                        <button class="date">14</button>
+                        <button class="date">15</button>
+                        <button class="date">16</button>
+                        <button class="date">17</button>
+                        <button class="date">18</button>
+                        <button class="date vaccination-day">19</button>
+                        <button class="date">20</button>
+                        <button class="date">21</button>
+                        <button class="date">22</button>
+                        <button class="date">23</button>
+                        <button class="date">24</button>
+                        <button class="date">25</button>
+                        <button class="date">26</button>
+                        <button class="date">27</button>
+                        <button class="date">28</button>
+                        <button class="date">29</button>
+                        <button class="date">30</button>
+                        <button class="date">31</button>
+                        <button class="date faded">1</button>
+                        <button class="date faded">2</button>
+                        <button class="date faded">3</button>
+                        <button class="date faded">4</button>
+                    </div>
+                </div><!-- .datepicker end -->
+            </div><!-- .inner end -->
+        </div><!-- .schedule end -->
+
+        <div class="talktalk">
+            <div class="inner">
+                <h4>최신 톡톡</h4>
+                <div class="cont">
+                    <figure>
+                        <a href="#">
+                            <img src="img/최신톡톡01.png" alt="cat">
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href="#">
+                            <img src="img/최신톡톡02.png" alt="dog">
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href="#">
+                            <img src="img/최신톡톡03.png" alt="dog">
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href="#">
+                            <img src="img/최신톡톡04.png" alt="cat">
+                        </a>
+                    </figure>
+                </div><!-- .cont end -->
+            </div><!-- .inner end -->
+        </div><!-- .talktalk end -->
+
+        <div class="shelter">
+            <div class="inner">
+                <h4>미아보호소</h4>
+                <p>우리 아이들의 보호자를 찾아주세요.</p>
+                <div class="cont">
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/미아보호소01.png" alt="믹스견">
+                            </figure>
+                            <span>믹스견/흰색/2022년생<br />웅진군청 백향면</span>
+                        </a>
+                    </div><!-- .item end -->
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/미아보호소02.png" alt="믹스묘">
+                            </figure>
+                            <span>믹스묘/검,흰/2023년생<br />구영7길 20</span>
+                        </a>
+                    </div><!-- .item end -->
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/미아보호소03.png" alt="믹스견">
+                            </figure>
+                            <span>믹스견/흰색/2021년생<br />서구 풍암동119</span>
+                        </a>
+                    </div><!-- .item end -->
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/미아보호소04.png" alt="믹스견">
+                            </figure>
+                            <span>터키시앙고라/흰색/2022년생<br />구영7길 20</span>
+                        </a>
+                    </div><!-- .item end -->
+                </div><!-- .cont end -->
+            </div><!-- .inner end -->
+        </div><!-- .shelter end -->
+
+        <div class="banner">
+            <figure>
+                <a href="#">
+                    <img src="img/banner.png" alt="우리엔앱이렇게달라졌어요!">
+                </a>
+            </figure>
+        </div><!-- .banner end -->
+
+        <div class="nav_bottom mobile">
+            <div class="nav_bottom_wrap">
+                <ul>
+                    <li><img src="img/icon/home.png" alt="홈"></li>
+                    <li>홈</li>
+                </ul>
+                <ul>
+                    <li><img src="img/icon/petcare.png" alt="펫케어"></li>
+                    <li>펫케어</li>
+                </ul>
+
+                <ul>
+                    <li><img src="img/icon/talk.png" alt="우리엔톡"></li>
+                    <li>우리엔 톡</li>
+                </ul>
+
+                <ul>
+                    <li><img src="img/icon/mydiary.png" alt="마이다이어리"></li>
+                    <li>마이 다이어리</li>
+                </ul>
+            </div>
+        </div><!-- .nav_bottom end -->
+
+    </div><!-- #wrap end -->
+</body>
+
+</html>
