@@ -4,13 +4,6 @@
 @import url('common.scss');
 
 /* --main_visual -- */
-
-#wrap {
-    max-width: var(--max-width);
-    width: var(--responsive-width);
-    margin: 0 auto;
-}
-
 .inner {
     width: calc(100% - 30px);
     margin: 0 auto;

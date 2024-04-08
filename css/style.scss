@@ -4,17 +4,11 @@
 @import url('common.scss');
 
 /* --main_visual -- */
-
-#wrap {
-    max-width: var(--max-width);
+.inner {
     width: var(--responsive-width);
     margin: 0 auto;
 }
 
-.inner {
-    width: calc(100% - 30px);
-    margin: 0 auto;
-}
 /* --reservation -- */
 select option[value=""][disabled] {
     display: none;
@@ -50,6 +44,8 @@ input[type='date']:valid::before {
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
+    overflow: scroll;
+    padding-bottom: 50px;
 
     .cont {
         max-width: var(--max-width);
@@ -64,7 +60,7 @@ input[type='date']:valid::before {
             gap: 20px;
 
             .select,
-            .calendar {
+            .calendar .box {
                 width: 100%;
                 height: 50px;
                 border: none;
@@ -119,6 +115,98 @@ input[type='date']:valid::before {
                     display: block;
                 }
             }
+            .calendar {
+                .datepicker {
+                    width: 100%;
+                    box-shadow: 0 5px 10px 0 rgba(#000, .1);
+                    padding: 2.85rem;
+                    border-radius: 0 0 20px 20px;
+                    background-color: white;
+                    display: none;
+            
+                    .datepicker-top {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 25px;
+                        position: relative;
+                        color: var(--color-point-text);
+
+                    }
+                    .month-selector {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 80%;
+                        margin: 0 auto;
+                        align-items: center;
+                        position: relative;
+        
+                        .material-icons {
+                            position: absolute;
+                            left: -999999px;
+                        }
+        
+                        span {
+                            font-size: 1.4rem;
+                        }
+        
+                        .arrow-left {
+                            &::before {
+                                content: '';
+                                width: 20px;
+                                height: 20px;
+                                background: url(../img/icon/left.png) center / cover no-repeat;
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                transform: translate(0, -50%);
+                            }
+                        }
+        
+                        .arrow-right {
+                            &::before {
+                                content: '';
+                                width: 20px;
+                                height: 20px;
+                                background: url(../img/icon/right.png) center / cover no-repeat;
+                                position: absolute;
+                                top: 50%;
+                                right: 0;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                    }
+                    .datepicker-calendar {
+                        display: grid;
+                        grid-template-columns: repeat(7, 1fr);
+                        grid-row-gap: 2.85rem;
+            
+                        .day {
+                            justify-self: center;
+                            color: #7E818C;
+                            font-size: 1.43rem;
+                        }
+            
+                        .date {
+                            justify-self: center;
+                            color: var(--color-point-text);
+                            font-size: 2rem;
+                        }
+            
+                        .faded {
+                            color: #aaaebd;
+                        }            
+            
+                    }
+                }
+                &.on {
+                    .box {
+                        border-radius: 10px 10px 0 0;
+                    }
+                    .datepicker {
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }
@@ -133,14 +221,16 @@ input[type='date']:valid::before {
         padding-top: 20px;
 
         .myhospital {
-            height: 33px;
+            height: 4rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
 
             .txtbox {
+                width: 90%;
                 height: 100%;
                 display: flex;
-                line-height: 33px;
+                line-height: 4rem;
 
                 h4 {
                     width: 94px;
@@ -150,10 +240,12 @@ input[type='date']:valid::before {
                 }
 
                 select {
-                    width: 234px;
+                    width: 85%;
                     border-radius: 0 20px 20px 0;
                     padding: 0 15px;
                     border: none;
+                    font-size: 2rem;
+                    
                 }
             }
         }
@@ -169,30 +261,29 @@ input[type='date']:valid::before {
     align-items: center;
 
     .profileimg {
-        width: 50px;
-        height: 50px;
+        width: 12.5%;
+        height: 12.5vw;
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
         }
     }
 
     .txtbox {
         color: white;
-        font-size: 1.2rem;
-        width: 197px;
+        font-size: 1.75rem;
 
         h2 {
-            margin-bottom: 5px;
+            margin-bottom: 1rem;
         }
 
         div {
-            height: 20px;
+            height: 2.85rem;
             display: flex;
-            gap: 10px;
-            line-height: 20px;
+            gap: 1.42rem;
+            line-height: 2.85rem;
+            align-items: center;
 
             ul {
                 display: flex;
@@ -209,13 +300,13 @@ input[type='date']:valid::before {
 
     .main_btn {
         h2 {
-            height: 25px;
-            width: 63px;
+            height: 3.57rem;
+            width: 9rem;
             background-color: #2B54A5;
             border-radius: 10px;
             color: white;
             text-align: center;
-            line-height: 25px;
+            line-height: 3.57rem;
 
             &:first-child {
                 margin-bottom: 5px;
@@ -224,16 +315,18 @@ input[type='date']:valid::before {
     }
 }
 
+/* --submenu -- */
 .submenu {
     ul {
         background-color: var(--color-point-light);
         border-radius: 20px 20px 0 0;
         display: flex;
         justify-content: space-around;
-        padding: 10px 0;
+        padding: 1.43rem 0;
     }
 }
 
+/* --mypet -- */
 .mypet {
     margin: 15px 0;
 
@@ -274,6 +367,7 @@ input[type='date']:valid::before {
     }
 }
 
+/* --schedule -- */
 .schedule {
 
     h4 {
@@ -283,7 +377,7 @@ input[type='date']:valid::before {
     .datepicker {
         width: 100%;
         box-shadow: 0 0 2px 0 rgba(#000, .2), 0 5px 10px 0 rgba(#000, .1);
-        padding: 2rem;
+        padding: 2.85rem;
         border-radius: 20px;
 
         .datepicker-top {
@@ -295,18 +389,18 @@ input[type='date']:valid::before {
 
             &::after {
                 content: '';
-                width: 320px;
+                width: 80%;
                 height: 1px;
                 background-color: #b4b4b4;
                 position: absolute;
-                top: 60px;
+                top: 70px;
                 left: 50%;
                 transform: translateX(-50%);
             }
 
             ul {
                 li {
-                    font-size: 1.2rem;
+                    font-size: 1.72rem;
                     margin-bottom: 7px;
                     position: relative;
 
@@ -351,7 +445,7 @@ input[type='date']:valid::before {
             .month-selector {
                 display: flex;
                 justify-content: space-between;
-                width: 240px;
+                width: 80%;
                 align-items: center;
                 position: relative;
 
@@ -395,17 +489,18 @@ input[type='date']:valid::before {
         .datepicker-calendar {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            grid-row-gap: 2rem;
+            grid-row-gap: 2.85rem;
 
             .day {
                 justify-self: center;
                 color: #7E818C;
+                font-size: 1.43rem;
             }
 
             .date {
                 justify-self: center;
                 color: var(--color-point-text);
-                font-size: 1.4rem;
+                font-size: 2rem;
             }
 
             .faded {
@@ -414,15 +509,15 @@ input[type='date']:valid::before {
 
             .medical-day {
                 background-color: #B8FFBF;
-                width: 20px;
-                height: 20px;
+                width: 2.86rem;
+                height: 2.86rem;
                 border-radius: 50%;
             }
 
             .vaccination-day {
                 background-color: #FFB8F8;
-                width: 21px;
-                height: 21px;
+                width: 3rem;
+                height: 3rem;
                 border-radius: 50%;
             }
 
@@ -432,6 +527,7 @@ input[type='date']:valid::before {
     }
 }
 
+/* --talktalk -- */
 .talktalk {
     margin: 15px 0;
 
@@ -439,9 +535,20 @@ input[type='date']:valid::before {
         margin-top: 15px;
         display: flex;
         justify-content: space-between;
+        figure {
+            max-width: var(--max-width);
+            width: calc(100% / 4 - 10px);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+        }
     }
 }
 
+/* --shelter -- */
 .shelter {
     overflow-x: auto;
 
@@ -457,24 +564,32 @@ input[type='date']:valid::before {
 
         figure {
             margin-bottom: 5px;
+            width: 13.57rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         span {
             display: block;
             text-align: center;
-            line-height: 13px;
+            font-size: 1.42rem;
+            line-height: 1.8rem;
             font-weight: 600;
         }
     }
 }
 
+/* --banner -- */
 .banner {
     max-width: var(--max-width);
     width: 100%;
+    margin-bottom: 100px;
 
     figure {
-        height: 130px;
-        margin: 10px 0 80px;
+        height: 33.07vw;
+        margin: 10px 0 100px;
 
         img {
             width: 100%;
@@ -483,3 +598,33 @@ input[type='date']:valid::before {
         }
     }
 }
+
+@media screen and (max-width:600px) {
+
+    html,
+    body {
+        font-size: 56.25%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    html,
+    body {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    html,
+    body {
+        font-size: 43.75%;
+    }
+
+    .datepicker {
+        .datepicker-top {
+            &::after {
+                top: 60px;
+            }
+        }
+    }
+}   

@@ -3,6 +3,9 @@ $(function () {
     let reservation = $('.reservation');
     let doneBtn = $('.reservation .input .btn')
 
+    let calendar = $('.reservation .cont .calendar')
+    let textBox = $('.reservation .cont .calendar .box')
+    let datepicker = $('.reservation .cont .calendar .datepicker')
 
     reservationBtn.click(function () {
         reservation.animate({
