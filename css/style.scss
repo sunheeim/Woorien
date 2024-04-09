@@ -59,14 +59,13 @@ input[type='date']:valid::before {
             flex-direction: column;
             gap: 20px;
 
-            .select,
             .calendar .box {
                 width: 100%;
                 height: 50px;
                 border: none;
                 padding: 0 15px;
                 font-family: var(--font);
-                font-size: 1.4rem;
+                font-size: 2rem;
                 border-radius: 10px;
                 display: flex;
                 justify-content: space-between;
@@ -87,7 +86,7 @@ input[type='date']:valid::before {
                 font-weight: bold;
                 color: #737373;
                 font-family: var(--font);
-                font-size: 1.4rem;
+                font-size: 2rem;
                 border-radius: 10px;
             }
 
@@ -96,7 +95,7 @@ input[type='date']:valid::before {
                 gap: 5px;
 
                 h1 {
-                    font-size: 1.3rem;
+                    font-size: 1.8rem;
                     color: #737373;
                 }
             }
@@ -108,13 +107,14 @@ input[type='date']:valid::before {
                 background-color: var(--color-point-light);
                 color: white;
                 border-radius: 10px;
-                font-size: 1.4rem;
+                font-size: 2rem;
                 line-height: 50px;
 
                 a {
                     display: block;
                 }
             }
+
             .calendar {
                 .datepicker {
                     width: 100%;
@@ -123,7 +123,7 @@ input[type='date']:valid::before {
                     border-radius: 0 0 20px 20px;
                     background-color: white;
                     display: none;
-            
+
                     .datepicker-top {
                         display: flex;
                         justify-content: space-between;
@@ -132,6 +132,7 @@ input[type='date']:valid::before {
                         color: var(--color-point-text);
 
                     }
+
                     .month-selector {
                         display: flex;
                         justify-content: space-between;
@@ -139,16 +140,16 @@ input[type='date']:valid::before {
                         margin: 0 auto;
                         align-items: center;
                         position: relative;
-        
+
                         .material-icons {
                             position: absolute;
                             left: -999999px;
                         }
-        
+
                         span {
                             font-size: 1.4rem;
                         }
-        
+
                         .arrow-left {
                             &::before {
                                 content: '';
@@ -161,7 +162,7 @@ input[type='date']:valid::before {
                                 transform: translate(0, -50%);
                             }
                         }
-        
+
                         .arrow-right {
                             &::before {
                                 content: '';
@@ -175,39 +176,105 @@ input[type='date']:valid::before {
                             }
                         }
                     }
+
                     .datepicker-calendar {
                         display: grid;
                         grid-template-columns: repeat(7, 1fr);
                         grid-row-gap: 2.85rem;
-            
+
                         .day {
                             justify-self: center;
                             color: #7E818C;
                             font-size: 1.43rem;
                         }
-            
+
                         .date {
                             justify-self: center;
                             color: var(--color-point-text);
                             font-size: 2rem;
                         }
-            
+
                         .faded {
                             color: #aaaebd;
-                        }            
-            
+                        }
+
                     }
                 }
+
                 &.on {
                     .box {
                         border-radius: 10px 10px 0 0;
                     }
+
                     .datepicker {
                         display: block;
                     }
                 }
             }
         }
+    }
+    .selectbox {
+        width: 100%;
+        border-radius: 10px;
+        background-color: white;
+        .toggle-btn {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            span {
+                font-weight: bold;
+                color: #737373;
+                padding-left: 3px;
+                font-size: 18px;
+                font-family: var(--font);
+            }
+            figure {
+                width: 2rem;
+                height: 2rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .upicon {
+                display: none;
+            }
+        }
+        .selectbox-option {
+            width: 85%;
+            background-color: white;
+            padding: 1rem 30px;
+            margin-top: 2px;
+            border-radius: 0 0 20px 20px;
+            position: relative;
+            z-index: 999;
+            display: none;
+            li {
+                .option-btn {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                }
+                &:last-child .option-btn {
+                    padding-top: 1rem;
+                    &::after {
+                        content: '';
+                        width: 90%;
+                        height: 1px;
+                        border: 1px #bebebe dashed;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+            
+        }
+
     }
 }
 
@@ -233,24 +300,88 @@ input[type='date']:valid::before {
                 line-height: 4rem;
 
                 h4 {
-                    width: 94px;
+                    width: 25%;
                     background-color: var(--color-point-light);
                     text-align: center;
                     border-radius: 20px 0 0 20px;
                 }
 
-                select {
-                    width: 85%;
+                .selectbox {
+                    width: 75%;
                     border-radius: 0 20px 20px 0;
-                    padding: 0 15px;
-                    border: none;
-                    font-size: 2rem;
-                    
+                    background-color: white;
+                    .toggle-btn {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        line-height: 4rem;
+                        padding: 0 30px;
+                        span {
+                            font-size: 2rem;
+                            font-weight: bold;
+                        }
+                        figure {
+                            width: 2.85rem;
+                            height: 2.85rem;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .upicon {
+                            display: none;
+                        }
+                    }
+                    .selectbox-option {
+                        width: 85%;
+                        background-color: white;
+                        padding: 1rem 30px;
+                        margin-top: 2px;
+                        border-radius: 0 0 20px 20px;
+                        position: relative;
+                        z-index: 999;
+                        display: none;
+                        li {
+                            .option-btn {
+                                font-size: 1.8rem;
+                                font-weight: bold;
+                            }
+                            &:last-child .option-btn {
+                                padding-top: 1rem;
+                                &::after {
+                                    content: '';
+                                    width: 90%;
+                                    height: 1px;
+                                    border: 1px #bebebe dashed;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            }
+                        }
+                        
+                    }
+
+                }
+            }
+
+            .alam {
+                width: 3.42rem;
+                height: 3.42rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
     }
 }
+
+
 
 
 /* --profile -- */
@@ -323,6 +454,20 @@ input[type='date']:valid::before {
         display: flex;
         justify-content: space-around;
         padding: 1.43rem 0;
+
+        li {
+            width: 5.71rem;
+            height: 6.14rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .qrcodeimg {
+            width: 5rem;
+            height: 5rem;
+        }
     }
 }
 
@@ -535,9 +680,11 @@ input[type='date']:valid::before {
         margin-top: 15px;
         display: flex;
         justify-content: space-between;
+
         figure {
             max-width: var(--max-width);
             width: calc(100% / 4 - 10px);
+
             img {
                 width: 100%;
                 height: 100%;
@@ -553,7 +700,7 @@ input[type='date']:valid::before {
     overflow-x: auto;
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.7rem;
     }
 
     .cont {
@@ -565,6 +712,7 @@ input[type='date']:valid::before {
         figure {
             margin-bottom: 5px;
             width: 13.57rem;
+
             img {
                 width: 100%;
                 height: 100%;
@@ -608,6 +756,7 @@ input[type='date']:valid::before {
 }
 
 @media screen and (max-width:500px) {
+
     html,
     body {
         font-size: 50%;
@@ -615,6 +764,7 @@ input[type='date']:valid::before {
 }
 
 @media screen and (max-width:400px) {
+
     html,
     body {
         font-size: 43.75%;
@@ -627,4 +777,4 @@ input[type='date']:valid::before {
             }
         }
     }
-}   
+}

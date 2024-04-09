@@ -42,23 +42,21 @@
     --color-point-light: #4489E1;
     --color-point-text: #0F2552;
 
-    --max-width: 393px;
-    --responsive-width: calc(100% - 40px);
+    --max-width: 767px;
+    --responsive-width: calc(100% - 30px);
 
     --titleSize-main: 1.6rem;
     --titleSize-sub: 1.2rem;
 }
 
 .nav_bottom {
-    font-size: 12px;
+    font-size: 1.7rem;
     background-color: white;
     padding: 12px 0;
     max-width: var(--max-width);
-    width: calc(100% - 30px);
+    width: 100%;
     position: fixed;
-    left: 50%;
     bottom: 0;
-    transform: translateX(-50%);
     z-index: 99999;
     &_wrap {
         display: flex;

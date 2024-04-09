@@ -58,21 +58,19 @@ input[type=date]:valid::before {
   flex-direction: column;
   gap: 20px;
 }
-.reservation .cont .input .select,
 .reservation .cont .input .calendar .box {
   width: 100%;
   height: 50px;
   border: none;
   padding: 0 15px;
   font-family: var(--font);
-  font-size: 1.4rem;
+  font-size: 2rem;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   background-color: white;
   align-items: center;
 }
-.reservation .cont .input .select h3,
 .reservation .cont .input .calendar .box h3 {
   font-weight: bold;
   color: #737373;
@@ -85,7 +83,7 @@ input[type=date]:valid::before {
   font-weight: bold;
   color: #737373;
   font-family: var(--font);
-  font-size: 1.4rem;
+  font-size: 2rem;
   border-radius: 10px;
 }
 .reservation .cont .input .text {
@@ -93,7 +91,7 @@ input[type=date]:valid::before {
   gap: 5px;
 }
 .reservation .cont .input .text h1 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   color: #737373;
 }
 .reservation .cont .input .btn {
@@ -103,7 +101,7 @@ input[type=date]:valid::before {
   background-color: var(--color-point-light);
   color: white;
   border-radius: 10px;
-  font-size: 1.4rem;
+  font-size: 2rem;
   line-height: 50px;
 }
 .reservation .cont .input .btn a {
@@ -183,6 +181,66 @@ input[type=date]:valid::before {
 .reservation .cont .input .calendar.on .datepicker {
   display: block;
 }
+.reservation .selectbox {
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+}
+.reservation .selectbox .toggle-btn {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.reservation .selectbox .toggle-btn span {
+  font-weight: bold;
+  color: #737373;
+  padding-left: 3px;
+  font-size: 18px;
+  font-family: var(--font);
+}
+.reservation .selectbox .toggle-btn figure {
+  width: 2rem;
+  height: 2rem;
+}
+.reservation .selectbox .toggle-btn figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reservation .selectbox .toggle-btn .upicon {
+  display: none;
+}
+.reservation .selectbox .selectbox-option {
+  width: 85%;
+  background-color: white;
+  padding: 1rem 30px;
+  margin-top: 2px;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  z-index: 999;
+  display: none;
+}
+.reservation .selectbox .selectbox-option li .option-btn {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.reservation .selectbox .selectbox-option li:last-child .option-btn {
+  padding-top: 1rem;
+}
+.reservation .selectbox .selectbox-option li:last-child .option-btn::after {
+  content: "";
+  width: 90%;
+  height: 1px;
+  border: 1px #bebebe dashed;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* -- main_visual */
 .main_visual {
@@ -206,17 +264,75 @@ input[type=date]:valid::before {
   line-height: 4rem;
 }
 .main_visual .inner .myhospital .txtbox h4 {
-  width: 94px;
+  width: 25%;
   background-color: var(--color-point-light);
   text-align: center;
   border-radius: 20px 0 0 20px;
 }
-.main_visual .inner .myhospital .txtbox select {
-  width: 85%;
+.main_visual .inner .myhospital .txtbox .selectbox {
+  width: 75%;
   border-radius: 0 20px 20px 0;
-  padding: 0 15px;
-  border: none;
+  background-color: white;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .toggle-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 4rem;
+  padding: 0 30px;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .toggle-btn span {
   font-size: 2rem;
+  font-weight: bold;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .toggle-btn figure {
+  width: 2.85rem;
+  height: 2.85rem;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .toggle-btn figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .toggle-btn .upicon {
+  display: none;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .selectbox-option {
+  width: 85%;
+  background-color: white;
+  padding: 1rem 30px;
+  margin-top: 2px;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  z-index: 999;
+  display: none;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .selectbox-option li .option-btn {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .selectbox-option li:last-child .option-btn {
+  padding-top: 1rem;
+}
+.main_visual .inner .myhospital .txtbox .selectbox .selectbox-option li:last-child .option-btn::after {
+  content: "";
+  width: 90%;
+  height: 1px;
+  border: 1px #bebebe dashed;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main_visual .inner .myhospital .alam {
+  width: 3.42rem;
+  height: 3.42rem;
+}
+.main_visual .inner .myhospital .alam img {
+  width: 100%;
+  height: 100%;
 }
 
 /* --profile -- */
@@ -277,6 +393,18 @@ input[type=date]:valid::before {
   display: flex;
   justify-content: space-around;
   padding: 1.43rem 0;
+}
+.submenu ul li {
+  width: 5.71rem;
+  height: 6.14rem;
+}
+.submenu ul li img {
+  width: 100%;
+  height: 100%;
+}
+.submenu ul .qrcodeimg {
+  width: 5rem;
+  height: 5rem;
 }
 
 /* --mypet -- */
@@ -465,7 +593,7 @@ input[type=date]:valid::before {
   overflow-x: auto;
 }
 .shelter p {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 }
 .shelter .cont {
   margin: 15px 0 30px;

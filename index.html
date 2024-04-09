@@ -19,11 +19,18 @@
             <div class="cont">
                 <h4>진료 예약</h4>
                 <div class="input">
-                    <select name="site" class="select" id="" onchange="window.open(value, '_self')" required>
-                        <option value="" disabled selected>예약 가능한 펫</option>
-                        <option value="">더블유 동물의료센터</option>
-                        <option value="">행복동물병원</option>
-                    </select>
+                    <div class="selectbox">
+                        <button type="button" class="toggle-btn respet-btn">
+                            <span>예약 가능한 펫</span>
+                            <figure class="downicon"><img src="img/icon/arrowdown.png" alt="" class="ico-down"></figure>
+                            <figure class="upicon"><img src="img/icon/arrowup.png" alt=""></figure>
+                        </button>
+                        <ul class="selectbox-option hide selectbox-respet">
+                            <li><button type="button" class="option-btn" onclick="location.href='#'">콩이/치와와</button></li>
+                            <li><button type="button" class="option-btn" onclick="location.href='#'">달콩이/프렌치불독</button></li>
+                            <li><button type="button" class="option-btn" onclick="location.href='#'">펫 등록하기 +</button></li>
+                        </ul>
+                    </div><!-- .selectbox end -->
                     <div class="calendar">
                         <div class="box">
                             <h3>예약 날짜</h3>
@@ -82,15 +89,21 @@
                                 <button class="date faded">4</button>
                             </div>
                         </div><!-- .datepicker end -->
-                    </div>
-                    <select name="site" class="select" id="" onchange="window.open(value, '_self')" required>
-                        <option value="" disabled selected>진료 종류</option>
-                        <option value="">일반</option>
-                        <option value="">예방접종</option>
-                        <option value="">건강검진</option>
-                        <option value="">스케일링</option>
-                        <option value="">정기검진</option>
-                    </select>
+                    </div><!-- .calender end -->
+                    <div class="selectbox">
+                        <button type="button" class="toggle-btn reslist-btn">
+                            <span>진료 종류</span>
+                            <figure class="downicon"><img src="img/icon/arrowdown.png" alt="" class="ico-down"></figure>
+                            <figure class="upicon"><img src="img/icon/arrowup.png" alt=""></figure>
+                        </button>
+                        <ul class="selectbox-option hide">
+                            <li><button type="button" class="option-btn" onclick="location.href='#'">일반</button></li>
+                            <li><button type="button" class="option-btn" onclick="location.href='#'">예방접종</button></li>
+                            <li><button type="button" class="option-btn" onclick="location.href='#'">건강검진</button></li>
+                            <li><button type="button" class="option-btn" onclick="location.href='#'">스케일링</button></li>
+                            <li><button type="button" class="option-btn" onclick="location.href='#'">정기검진</button></li>
+                        </ul>
+                    </div><!-- .selectbox end -->
                     <div class="box">
                         <input type="text" class="comment" id="comment" placeholder="증상 및 병원에 남길 말">
                     </div><!-- .box end -->
@@ -98,8 +111,8 @@
                         <figure>
                             <img src="img/icon/Information-circle.png" alt="infoicon">
                         </figure>
-                        <h1>예약 확정 후 문자메세지 발신 됩니다.<br/>
-                        확정 문자를 받기 전까지는 예약 보류 상태입니다.</h1>
+                        <h1>예약 확정 후 문자메세지 발신 됩니다.<br />
+                            확정 문자를 받기 전까지는 예약 보류 상태입니다.</h1>
                     </div><!-- .text end -->
                     <div class="btn">
                         <a href="#">예약</a>
@@ -107,16 +120,24 @@
                 </div><!-- .input end -->
             </div><!-- .cont end -->
         </div><!-- .reservation end -->
-        
+
         <div class="main_visual">
             <div class="inner">
                 <div class="myhospital">
                     <div class="txtbox">
                         <h4>내 병원</h4>
-                        <select name="site" id="" onchange="window.open(value, '_self')">
-                            <option value="./index.html">더블유 동물의료센터</option>
-                            <option value="./sub01_pet02/pet02.html">행복동물병원</option>
-                        </select>
+                        <div class="selectbox">
+                            <button type="button" class="toggle-btn">
+                                <span>더블유 동물의료센터</span>
+                                <figure class="downicon"><img src="img/icon/underIcon.png" alt="" class="ico-down"></figure>
+                                <figure class="upicon"><img src="img/icon/upIcon.png" alt=""></figure>
+                            </button>
+                            <ul class="selectbox-option hide">
+                                <li><button type="button" class="option-btn" onclick="location.href='index.html'">더블유 동물의료센터</button></li>
+                                <li><button type="button" class="option-btn" onclick="location.href='sub01_pet02/pet02.html'">행복 동물병원</button></li>
+                            </ul>
+                        </div><!-- .selectbox end -->
+
                     </div><!-- .txtbox end -->
                     <figure class="alam">
                         <a href="#"><img src="img/icon/Bell.png" alt="종icon"></a>
@@ -151,7 +172,7 @@
                                 <img src="img/icon/전화걸기.png" alt="전화걸기">
                             </a>
                         </li>
-                        <li>
+                        <li class="qrcodeimg">
                             <a href="#">
                                 <img src="img/icon/qr-code-scan.png" alt="qrcode">
                             </a>

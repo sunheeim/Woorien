@@ -5,44 +5,270 @@
 
 /* --main_visual -- */
 .inner {
-    width: calc(100% - 30px);
+    width: var(--responsive-width);
     margin: 0 auto;
 }
 
-.main_visual {
-    background-color: var(--color-point);
+/* --reservation -- */
+select option[value=""][disabled] {
+    display: none;
+}
 
-    .inner {
-        padding-top: 20px;
+option {
+    color: #333333;
+    font-weight: bold;
+}
 
-        .myhospital {
-            height: 33px;
+select:invalid {
+    color: #737373;
+    font-weight: bold;
+}
+
+input[type='date']::before {
+    content: attr(data-placeholder);
+}
+
+input[type='date']:focus::before,
+input[type='date']:valid::before {
+    display: none;
+}
+
+.reservation {
+    max-width: var(--max-width);
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    border-radius: 20px 20px 0 0;
+    position: fixed;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    overflow: scroll;
+    padding-bottom: 50px;
+
+    .cont {
+        max-width: var(--max-width);
+        width: var(--responsive-width);
+        margin: 0 auto;
+        padding: 20px 0 50px;
+
+        .input {
+            margin-top: 20px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 20px;
 
-            .txtbox {
-                height: 100%;
+            .select,
+            .calendar .box {
+                width: 100%;
+                height: 50px;
+                border: none;
+                padding: 0 15px;
+                font-family: var(--font);
+                font-size: 2rem;
+                border-radius: 10px;
                 display: flex;
-                line-height: 33px;
+                justify-content: space-between;
+                background-color: white;
+                align-items: center;
 
-                h4 {
-                    width: 94px;
-                    background-color: var(--color-point-light);
-                    text-align: center;
-                    border-radius: 20px 0 0 20px;
+                h3 {
+                    font-weight: bold;
+                    color: #737373;
+                    padding-left: 3px;
+                }
+            }
+
+            .comment {
+                width: 100%;
+                border: none;
+                padding: 15px 15px 305px 18px;
+                font-weight: bold;
+                color: #737373;
+                font-family: var(--font);
+                font-size: 2rem;
+                border-radius: 10px;
+            }
+
+            .text {
+                display: flex;
+                gap: 5px;
+
+                h1 {
+                    font-size: 1.8rem;
+                    color: #737373;
+                }
+            }
+
+            .btn {
+                width: 100%;
+                height: 50px;
+                text-align: center;
+                background-color: var(--color-point-light);
+                color: white;
+                border-radius: 10px;
+                font-size: 2rem;
+                line-height: 50px;
+
+                a {
+                    display: block;
+                }
+            }
+
+            .calendar {
+                .datepicker {
+                    width: 100%;
+                    box-shadow: 0 5px 10px 0 rgba(#000, .1);
+                    padding: 2.85rem;
+                    border-radius: 0 0 20px 20px;
+                    background-color: white;
+                    display: none;
+
+                    .datepicker-top {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 25px;
+                        position: relative;
+                        color: var(--color-point-text);
+
+                    }
+
+                    .month-selector {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 80%;
+                        margin: 0 auto;
+                        align-items: center;
+                        position: relative;
+
+                        .material-icons {
+                            position: absolute;
+                            left: -999999px;
+                        }
+
+                        span {
+                            font-size: 1.4rem;
+                        }
+
+                        .arrow-left {
+                            &::before {
+                                content: '';
+                                width: 20px;
+                                height: 20px;
+                                background: url(../img/icon/left.png) center / cover no-repeat;
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                transform: translate(0, -50%);
+                            }
+                        }
+
+                        .arrow-right {
+                            &::before {
+                                content: '';
+                                width: 20px;
+                                height: 20px;
+                                background: url(../img/icon/right.png) center / cover no-repeat;
+                                position: absolute;
+                                top: 50%;
+                                right: 0;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                    }
+
+                    .datepicker-calendar {
+                        display: grid;
+                        grid-template-columns: repeat(7, 1fr);
+                        grid-row-gap: 2.85rem;
+
+                        .day {
+                            justify-self: center;
+                            color: #7E818C;
+                            font-size: 1.43rem;
+                        }
+
+                        .date {
+                            justify-self: center;
+                            color: var(--color-point-text);
+                            font-size: 2rem;
+                        }
+
+                        .faded {
+                            color: #aaaebd;
+                        }
+
+                    }
                 }
 
-                select {
-                    width: 234px;
-                    border-radius: 0 20px 20px 0;
-                    padding: 0 15px;
-                    border: none;
+                &.on {
+                    .box {
+                        border-radius: 10px 10px 0 0;
+                    }
+
+                    .datepicker {
+                        display: block;
+                    }
                 }
             }
         }
     }
 }
 
+/* -- main_visual */
+.main_visual {
+    background-color: var(--color-point);
+    max-width: var(--max-width);
+    width: 100%;
+
+    .inner {
+        padding-top: 20px;
+
+        .myhospital {
+            height: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .txtbox {
+                width: 90%;
+                height: 100%;
+                display: flex;
+                line-height: 4rem;
+
+                h4 {
+                    width: 25%;
+                    background-color: var(--color-point-light);
+                    text-align: center;
+                    border-radius: 20px 0 0 20px;
+                }
+
+                select {
+                    width: 75%;
+                    border-radius: 0 20px 20px 0;
+                    padding: 0 15px;
+                    border: none;
+                    font-size: 2rem;
+
+                }
+            }
+
+            .alam {
+                width: 3.42rem;
+                height: 3.42rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+/* --profile -- */
 .profile {
     margin: 33px 0;
     display: flex;
@@ -50,30 +276,29 @@
     align-items: center;
 
     .profileimg {
-        width: 50px;
-        height: 50px;
+        width: 12.5%;
+        height: 12.5vw;
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
         }
     }
 
     .txtbox {
         color: white;
-        font-size: 1.2rem;
-        width: 197px;
+        font-size: 1.75rem;
 
         h2 {
-            margin-bottom: 5px;
+            margin-bottom: 1rem;
         }
 
         div {
-            height: 20px;
+            height: 2.85rem;
             display: flex;
-            gap: 10px;
-            line-height: 20px;
+            gap: 1.42rem;
+            line-height: 2.85rem;
+            align-items: center;
 
             ul {
                 display: flex;
@@ -90,13 +315,13 @@
 
     .main_btn {
         h2 {
-            height: 25px;
-            width: 63px;
+            height: 3.57rem;
+            width: 9rem;
             background-color: #2B54A5;
             border-radius: 10px;
             color: white;
             text-align: center;
-            line-height: 25px;
+            line-height: 3.57rem;
 
             &:first-child {
                 margin-bottom: 5px;
@@ -105,16 +330,32 @@
     }
 }
 
+/* --submenu -- */
 .submenu {
     ul {
         background-color: var(--color-point-light);
         border-radius: 20px 20px 0 0;
         display: flex;
         justify-content: space-around;
-        padding: 10px 0;
+        padding: 1.43rem 0;
+
+        li {
+            width: 5.71rem;
+            height: 6.14rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .qrcodeimg {
+            width: 5rem;
+            height: 5rem;
+        }
     }
 }
 
+/* --mypet -- */
 .mypet {
     margin: 15px 0;
 
@@ -131,9 +372,11 @@
             padding: 3px;
             border-radius: 50%;
         }
+
         figure {
             width: 80px;
             height: 80px;
+
             img {
                 width: 100%;
                 height: 100%;
@@ -153,6 +396,7 @@
     }
 }
 
+/* --schedule -- */
 .schedule {
 
     h4 {
@@ -162,7 +406,7 @@
     .datepicker {
         width: 100%;
         box-shadow: 0 0 2px 0 rgba(#000, .2), 0 5px 10px 0 rgba(#000, .1);
-        padding: 2rem;
+        padding: 2.85rem;
         border-radius: 20px;
 
         .datepicker-top {
@@ -174,18 +418,18 @@
 
             &::after {
                 content: '';
-                width: 320px;
+                width: 80%;
                 height: 1px;
                 background-color: #b4b4b4;
                 position: absolute;
-                top: 60px;
+                top: 70px;
                 left: 50%;
                 transform: translateX(-50%);
             }
 
             ul {
                 li {
-                    font-size: 1.2rem;
+                    font-size: 1.72rem;
                     margin-bottom: 7px;
                     position: relative;
 
@@ -230,7 +474,7 @@
             .month-selector {
                 display: flex;
                 justify-content: space-between;
-                width: 240px;
+                width: 80%;
                 align-items: center;
                 position: relative;
 
@@ -274,17 +518,18 @@
         .datepicker-calendar {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            grid-row-gap: 2rem;
+            grid-row-gap: 2.85rem;
 
             .day {
                 justify-self: center;
                 color: #7E818C;
+                font-size: 1.43rem;
             }
 
             .date {
                 justify-self: center;
                 color: var(--color-point-text);
-                font-size: 1.4rem;
+                font-size: 2rem;
             }
 
             .faded {
@@ -293,63 +538,127 @@
 
             .medical-day {
                 background-color: #B8FFBF;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-            }
-            .vaccination-day {
-                background-color: #FFB8F8;
-                width: 21px;
-                height: 21px;
+                width: 2.86rem;
+                height: 2.86rem;
                 border-radius: 50%;
             }
 
-            
+            .vaccination-day {
+                background-color: #FFB8F8;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+            }
+
+
         }
 
     }
 }
 
+/* --talktalk -- */
 .talktalk {
     margin: 15px 0;
+
     .cont {
         margin-top: 15px;
         display: flex;
         justify-content: space-between;
+
+        figure {
+            max-width: var(--max-width);
+            width: calc(100% / 4 - 10px);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+        }
     }
 }
 
+/* --shelter -- */
 .shelter {
     overflow-x: auto;
+
     p {
-        font-size: 1.2rem;
+        font-size: 1.7rem;
     }
+
     .cont {
         margin: 15px 0 30px;
         display: flex;
         justify-content: space-between;
         gap: 15px;
+
         figure {
             margin-bottom: 5px;
+            width: 13.57rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
+
         span {
             display: block;
             text-align: center;
-            line-height: 13px;
+            font-size: 1.42rem;
+            line-height: 1.8rem;
             font-weight: 600;
         }
     }
 }
+
+/* --banner -- */
 .banner {
     max-width: var(--max-width);
     width: 100%;
+    margin-bottom: 100px;
+
     figure {
-        height: 130px;
-        margin: 10px 0 80px;
+        height: 33.07vw;
+        margin: 10px 0 100px;
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    html,
+    body {
+        font-size: 56.25%;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    html,
+    body {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    html,
+    body {
+        font-size: 43.75%;
+    }
+
+    .datepicker {
+        .datepicker-top {
+            &::after {
+                top: 60px;
+            }
         }
     }
 }

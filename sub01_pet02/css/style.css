@@ -4,39 +4,230 @@
 @import url("common.scss");
 /* --main_visual -- */
 .inner {
-  width: calc(100% - 30px);
+  width: var(--responsive-width);
   margin: 0 auto;
 }
 
+/* --reservation -- */
+select option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: #333333;
+  font-weight: bold;
+}
+
+select:invalid {
+  color: #737373;
+  font-weight: bold;
+}
+
+input[type=date]::before {
+  content: attr(data-placeholder);
+}
+
+input[type=date]:focus::before,
+input[type=date]:valid::before {
+  display: none;
+}
+
+.reservation {
+  max-width: var(--max-width);
+  width: 100%;
+  height: 100%;
+  background-color: #eeeeee;
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  overflow: scroll;
+  padding-bottom: 50px;
+}
+.reservation .cont {
+  max-width: var(--max-width);
+  width: var(--responsive-width);
+  margin: 0 auto;
+  padding: 20px 0 50px;
+}
+.reservation .cont .input {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.reservation .cont .input .select,
+.reservation .cont .input .calendar .box {
+  width: 100%;
+  height: 50px;
+  border: none;
+  padding: 0 15px;
+  font-family: var(--font);
+  font-size: 2rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+}
+.reservation .cont .input .select h3,
+.reservation .cont .input .calendar .box h3 {
+  font-weight: bold;
+  color: #737373;
+  padding-left: 3px;
+}
+.reservation .cont .input .comment {
+  width: 100%;
+  border: none;
+  padding: 15px 15px 305px 18px;
+  font-weight: bold;
+  color: #737373;
+  font-family: var(--font);
+  font-size: 2rem;
+  border-radius: 10px;
+}
+.reservation .cont .input .text {
+  display: flex;
+  gap: 5px;
+}
+.reservation .cont .input .text h1 {
+  font-size: 1.8rem;
+  color: #737373;
+}
+.reservation .cont .input .btn {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background-color: var(--color-point-light);
+  color: white;
+  border-radius: 10px;
+  font-size: 2rem;
+  line-height: 50px;
+}
+.reservation .cont .input .btn a {
+  display: block;
+}
+.reservation .cont .input .calendar .datepicker {
+  width: 100%;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 2.85rem;
+  border-radius: 0 0 20px 20px;
+  background-color: white;
+  display: none;
+}
+.reservation .cont .input .calendar .datepicker .datepicker-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  position: relative;
+  color: var(--color-point-text);
+}
+.reservation .cont .input .calendar .datepicker .month-selector {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+}
+.reservation .cont .input .calendar .datepicker .month-selector .material-icons {
+  position: absolute;
+  left: -999999px;
+}
+.reservation .cont .input .calendar .datepicker .month-selector span {
+  font-size: 1.4rem;
+}
+.reservation .cont .input .calendar .datepicker .month-selector .arrow-left::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url(../img/icon/left.png) center/cover no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.reservation .cont .input .calendar .datepicker .month-selector .arrow-right::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url(../img/icon/right.png) center/cover no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+.reservation .cont .input .calendar .datepicker .datepicker-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-row-gap: 2.85rem;
+}
+.reservation .cont .input .calendar .datepicker .datepicker-calendar .day {
+  justify-self: center;
+  color: #7E818C;
+  font-size: 1.43rem;
+}
+.reservation .cont .input .calendar .datepicker .datepicker-calendar .date {
+  justify-self: center;
+  color: var(--color-point-text);
+  font-size: 2rem;
+}
+.reservation .cont .input .calendar .datepicker .datepicker-calendar .faded {
+  color: #aaaebd;
+}
+.reservation .cont .input .calendar.on .box {
+  border-radius: 10px 10px 0 0;
+}
+.reservation .cont .input .calendar.on .datepicker {
+  display: block;
+}
+
+/* -- main_visual */
 .main_visual {
   background-color: var(--color-point);
+  max-width: var(--max-width);
+  width: 100%;
 }
 .main_visual .inner {
   padding-top: 20px;
 }
 .main_visual .inner .myhospital {
-  height: 33px;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .main_visual .inner .myhospital .txtbox {
+  width: 90%;
   height: 100%;
   display: flex;
-  line-height: 33px;
+  line-height: 4rem;
 }
 .main_visual .inner .myhospital .txtbox h4 {
-  width: 94px;
+  width: 25%;
   background-color: var(--color-point-light);
   text-align: center;
   border-radius: 20px 0 0 20px;
 }
 .main_visual .inner .myhospital .txtbox select {
-  width: 234px;
+  width: 75%;
   border-radius: 0 20px 20px 0;
   padding: 0 15px;
   border: none;
+  font-size: 2rem;
+}
+.main_visual .inner .myhospital .alam {
+  width: 3.42rem;
+  height: 3.42rem;
+}
+.main_visual .inner .myhospital .alam img {
+  width: 100%;
+  height: 100%;
 }
 
+/* --profile -- */
 .profile {
   margin: 33px 0;
   display: flex;
@@ -44,28 +235,26 @@
   align-items: center;
 }
 .profile .profileimg {
-  width: 50px;
-  height: 50px;
+  width: 12.5%;
+  height: 12.5vw;
 }
 .profile .profileimg img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .profile .txtbox {
   color: white;
-  font-size: 1.2rem;
-  width: 197px;
+  font-size: 1.75rem;
 }
 .profile .txtbox h2 {
-  margin-bottom: 5px;
+  margin-bottom: 1rem;
 }
 .profile .txtbox div {
-  height: 20px;
+  height: 2.85rem;
   display: flex;
-  gap: 10px;
-  line-height: 20px;
+  gap: 1.42rem;
+  line-height: 2.85rem;
+  align-items: center;
 }
 .profile .txtbox div ul {
   display: flex;
@@ -77,26 +266,40 @@
   border-radius: 10px;
 }
 .profile .main_btn h2 {
-  height: 25px;
-  width: 63px;
+  height: 3.57rem;
+  width: 9rem;
   background-color: #2B54A5;
   border-radius: 10px;
   color: white;
   text-align: center;
-  line-height: 25px;
+  line-height: 3.57rem;
 }
 .profile .main_btn h2:first-child {
   margin-bottom: 5px;
 }
 
+/* --submenu -- */
 .submenu ul {
   background-color: var(--color-point-light);
   border-radius: 20px 20px 0 0;
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 1.43rem 0;
+}
+.submenu ul li {
+  width: 5.71rem;
+  height: 6.14rem;
+}
+.submenu ul li img {
+  width: 100%;
+  height: 100%;
+}
+.submenu ul .qrcodeimg {
+  width: 5rem;
+  height: 5rem;
 }
 
+/* --mypet -- */
 .mypet {
   margin: 15px 0;
 }
@@ -132,13 +335,14 @@
   align-items: center;
 }
 
+/* --schedule -- */
 .schedule h4 {
   margin-bottom: 15px;
 }
 .schedule .datepicker {
   width: 100%;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 2.85rem;
   border-radius: 20px;
 }
 .schedule .datepicker .datepicker-top {
@@ -150,16 +354,16 @@
 }
 .schedule .datepicker .datepicker-top::after {
   content: "";
-  width: 320px;
+  width: 80%;
   height: 1px;
   background-color: #b4b4b4;
   position: absolute;
-  top: 60px;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
 }
 .schedule .datepicker .datepicker-top ul li {
-  font-size: 1.2rem;
+  font-size: 1.72rem;
   margin-bottom: 7px;
   position: relative;
 }
@@ -193,7 +397,7 @@
 .schedule .datepicker .datepicker-top .month-selector {
   display: flex;
   justify-content: space-between;
-  width: 240px;
+  width: 80%;
   align-items: center;
   position: relative;
 }
@@ -227,33 +431,35 @@
 .schedule .datepicker .datepicker-calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-row-gap: 2rem;
+  grid-row-gap: 2.85rem;
 }
 .schedule .datepicker .datepicker-calendar .day {
   justify-self: center;
   color: #7E818C;
+  font-size: 1.43rem;
 }
 .schedule .datepicker .datepicker-calendar .date {
   justify-self: center;
   color: var(--color-point-text);
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 .schedule .datepicker .datepicker-calendar .faded {
   color: #aaaebd;
 }
 .schedule .datepicker .datepicker-calendar .medical-day {
   background-color: #B8FFBF;
-  width: 20px;
-  height: 20px;
+  width: 2.86rem;
+  height: 2.86rem;
   border-radius: 50%;
 }
 .schedule .datepicker .datepicker-calendar .vaccination-day {
   background-color: #FFB8F8;
-  width: 21px;
-  height: 21px;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
 }
 
+/* --talktalk -- */
 .talktalk {
   margin: 15px 0;
 }
@@ -262,12 +468,24 @@
   display: flex;
   justify-content: space-between;
 }
+.talktalk .cont figure {
+  max-width: var(--max-width);
+  width: calc(25% - 10px);
+}
+.talktalk .cont figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
 
+/* --shelter -- */
 .shelter {
   overflow-x: auto;
 }
 .shelter p {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 }
 .shelter .cont {
   margin: 15px 0 30px;
@@ -277,25 +495,55 @@
 }
 .shelter .cont figure {
   margin-bottom: 5px;
+  width: 13.57rem;
+}
+.shelter .cont figure img {
+  width: 100%;
+  height: 100%;
 }
 .shelter .cont span {
   display: block;
   text-align: center;
-  line-height: 13px;
+  font-size: 1.42rem;
+  line-height: 1.8rem;
   font-weight: 600;
 }
 
+/* --banner -- */
 .banner {
   max-width: var(--max-width);
   width: 100%;
+  margin-bottom: 100px;
 }
 .banner figure {
-  height: 130px;
-  margin: 10px 0 80px;
+  height: 33.07vw;
+  margin: 10px 0 100px;
 }
 .banner figure img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    font-size: 56.25%;
+  }
+}
+@media screen and (max-width: 500px) {
+  html,
+  body {
+    font-size: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  html,
+  body {
+    font-size: 43.75%;
+  }
+  .datepicker .datepicker-top::after {
+    top: 60px;
+  }
 }/*# sourceMappingURL=style.css.map */
